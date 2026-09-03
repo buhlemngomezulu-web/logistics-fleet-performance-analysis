@@ -1,0 +1,15 @@
+customers: (200, 8)
+drivers: (150, 12)
+trucks: (120, 11)
+trailers: (180, 9)
+facilities: (50, 9)
+routes: (58, 10)
+loads: (85410, 13)
+trips: missing driver_id=1714, truck_id=1672, trailer_id=1680 (kept as NaN, all belong to Completed trips)
+trips: (85410, 12)
+fuel_purchases: (196442, 11)
+maintenance_records: (2920, 13), cost outliers flagged=0
+delivery_events: (170820, 11)
+safety_incidents: (170, 16), cargo damage outliers flagged=36
+driver_monthly_metrics: (4464, 9)
+truck_utilization_metrics: (3312, 12)

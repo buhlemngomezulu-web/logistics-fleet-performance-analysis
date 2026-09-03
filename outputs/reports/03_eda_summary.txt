@@ -1,0 +1,33 @@
+======================================================================
+LOGISTICS FLEET ANALYSIS - EDA SUMMARY
+======================================================================
+Analysis period: 2022-01-01 to 2024-12-31
+Total loads/trips: 85,410
+Total revenue: $262,525,800
+Total miles: 122,159,201
+Overall on-time delivery rate: 44.6%
+Average revenue per mile: $2.14
+Average trip MPG: 6.50
+
+[Chart 1] Monthly revenue & volume trend saved. Range: 2136-2496 loads/mo, $6.57M-$7.72M/mo (seasonal swing is modest, ~10-15%, February consistently lowest).
+[Chart 2] On-time delivery trend saved. Range: 42.7% - 46.2%
+
+[Chart 3] Customer revenue analysis saved. Top customer: First Group ($9,136,680)
+
+[Chart 4] Route profitability saved. Best lane: Philadelphia, PA -> New York, NY ($2.72/mi); Worst: Las Vegas, NV -> New York, NY ($1.48/mi)
+
+[Chart 5] Fuel efficiency saved. Best make: Mack (6.51 MPG); Worst: Volvo (6.49 MPG)
+
+[Chart 6] Driver performance scatter saved. n=124 drivers with ≥20 trips.
+
+[Chart 7] Fleet utilization saved. Mean utilization: 83.0%
+
+[Chart 8] Maintenance analysis saved. Age vs cost/mile correlation: -0.11
+
+[Chart 9] Safety incident analysis saved. 170 incidents total, 38% preventable, total claims $2,653,172
+
+[Chart 10] Load/booking mix saved.
+
+[Chart 11] Detention impact saved.
+
+[Chart 12] Correlation heatmap saved.

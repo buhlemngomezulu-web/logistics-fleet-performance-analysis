@@ -1,0 +1,348 @@
+
+================================================================================
+TABLE: customers  (customers.csv)
+================================================================================
+shape: (200, 8)
+
+dtypes:
+customer_id                   str
+customer_name                 str
+customer_type                 str
+credit_terms_days           int64
+primary_freight_type          str
+account_status                str
+contract_start_date           str
+annual_revenue_potential    int64
+dtype: object
+
+missing values: none
+
+full duplicate rows: 0
+duplicate customer_id values: 0
+
+================================================================================
+TABLE: drivers  (drivers.csv)
+================================================================================
+shape: (150, 12)
+
+dtypes:
+driver_id              str
+first_name             str
+last_name              str
+hire_date              str
+termination_date       str
+license_number         str
+license_state          str
+date_of_birth          str
+home_terminal          str
+employment_status      str
+cdl_class              str
+years_experience     int64
+dtype: object
+
+missing values:
+                  count    pct
+termination_date    124  82.67
+
+full duplicate rows: 0
+duplicate driver_id values: 0
+
+================================================================================
+TABLE: trucks  (trucks.csv)
+================================================================================
+shape: (120, 11)
+
+dtypes:
+truck_id                   str
+unit_number              int64
+make                       str
+model_year               int64
+vin                        str
+acquisition_date           str
+acquisition_mileage      int64
+fuel_type                  str
+tank_capacity_gallons    int64
+status                     str
+home_terminal              str
+dtype: object
+
+missing values: none
+
+full duplicate rows: 0
+duplicate truck_id values: 0
+
+================================================================================
+TABLE: trailers  (trailers.csv)
+================================================================================
+shape: (180, 9)
+
+dtypes:
+trailer_id            str
+trailer_number      int64
+trailer_type          str
+length_feet         int64
+model_year          int64
+vin                   str
+acquisition_date      str
+status                str
+current_location      str
+dtype: object
+
+missing values: none
+
+full duplicate rows: 0
+duplicate trailer_id values: 0
+
+================================================================================
+TABLE: facilities  (facilities.csv)
+================================================================================
+shape: (50, 9)
+
+dtypes:
+facility_id            str
+facility_name          str
+facility_type          str
+city                   str
+state                  str
+latitude           float64
+longitude          float64
+dock_doors           int64
+operating_hours        str
+dtype: object
+
+missing values: none
+
+full duplicate rows: 0
+duplicate facility_id values: 0
+
+================================================================================
+TABLE: routes  (routes.csv)
+================================================================================
+shape: (58, 9)
+
+dtypes:
+route_id                      str
+origin_city                   str
+origin_state                  str
+destination_city              str
+destination_state             str
+typical_distance_miles      int64
+base_rate_per_mile        float64
+fuel_surcharge_rate       float64
+typical_transit_days        int64
+dtype: object
+
+missing values: none
+
+full duplicate rows: 0
+duplicate route_id values: 0
+
+================================================================================
+TABLE: loads  (loads.csv)
+================================================================================
+shape: (85410, 12)
+
+dtypes:
+load_id                    str
+customer_id                str
+route_id                   str
+load_date                  str
+load_type                  str
+weight_lbs               int64
+pieces                   int64
+revenue                float64
+fuel_surcharge         float64
+accessorial_charges      int64
+load_status                str
+booking_type               str
+dtype: object
+
+missing values: none
+
+full duplicate rows: 0
+duplicate load_id values: 0
+
+================================================================================
+TABLE: trips  (trips.csv)
+================================================================================
+shape: (85410, 12)
+
+dtypes:
+trip_id                      str
+load_id                      str
+driver_id                    str
+truck_id                     str
+trailer_id                   str
+dispatch_date                str
+actual_distance_miles      int64
+actual_duration_hours    float64
+fuel_gallons_used        float64
+average_mpg              float64
+idle_time_hours          float64
+trip_status                  str
+dtype: object
+
+missing values:
+            count   pct
+driver_id    1714  2.01
+truck_id     1672  1.96
+trailer_id   1680  1.97
+
+full duplicate rows: 0
+duplicate trip_id values: 0
+
+================================================================================
+TABLE: fuel_purchases  (fuel_purchases.csv)
+================================================================================
+shape: (196442, 11)
+
+dtypes:
+fuel_purchase_id        str
+trip_id                 str
+truck_id                str
+driver_id               str
+purchase_date           str
+location_city           str
+location_state          str
+gallons             float64
+price_per_gallon    float64
+total_cost          float64
+fuel_card_number        str
+dtype: object
+
+missing values:
+           count   pct
+truck_id    3880  1.98
+driver_id   3988  2.03
+
+full duplicate rows: 0
+duplicate fuel_purchase_id values: 0
+
+================================================================================
+TABLE: maintenance_records  (maintenance_records.csv)
+================================================================================
+shape: (2920, 12)
+
+dtypes:
+maintenance_id             str
+truck_id                   str
+maintenance_date           str
+maintenance_type           str
+odometer_reading         int64
+labor_hours            float64
+labor_cost             float64
+parts_cost             float64
+total_cost             float64
+facility_location          str
+downtime_hours         float64
+service_description        str
+dtype: object
+
+missing values: none
+
+full duplicate rows: 0
+duplicate maintenance_id values: 0
+
+================================================================================
+TABLE: delivery_events  (delivery_events.csv)
+================================================================================
+shape: (170820, 11)
+
+dtypes:
+event_id                str
+load_id                 str
+trip_id                 str
+event_type              str
+facility_id             str
+scheduled_datetime      str
+actual_datetime         str
+detention_minutes     int64
+on_time_flag           bool
+location_city           str
+location_state          str
+dtype: object
+
+missing values: none
+
+full duplicate rows: 0
+duplicate event_id values: 0
+
+================================================================================
+TABLE: safety_incidents  (safety_incidents.csv)
+================================================================================
+shape: (170, 15)
+
+dtypes:
+incident_id                str
+trip_id                    str
+truck_id                   str
+driver_id                  str
+incident_date              str
+incident_type              str
+location_city              str
+location_state             str
+at_fault_flag             bool
+injury_flag               bool
+vehicle_damage_cost    float64
+cargo_damage_cost      float64
+claim_amount           float64
+preventable_flag          bool
+description                str
+dtype: object
+
+missing values:
+           count   pct
+truck_id       1  0.59
+driver_id      1  0.59
+
+full duplicate rows: 0
+duplicate incident_id values: 0
+  outliers (extreme IQR*3) in 'cargo_damage_cost': 36  (range obs: [0.0, 49744.07], bounds: [-5371.69, 7162.25])
+
+================================================================================
+TABLE: driver_monthly_metrics  (driver_monthly_metrics.csv)
+================================================================================
+shape: (4464, 9)
+
+dtypes:
+driver_id                    str
+month                        str
+trips_completed            int64
+total_miles                int64
+total_revenue            float64
+average_mpg              float64
+total_fuel_gallons       float64
+on_time_delivery_rate    float64
+average_idle_hours       float64
+dtype: object
+
+missing values: none
+
+full duplicate rows: 0
+
+================================================================================
+TABLE: truck_utilization_metrics  (truck_utilization_metrics.csv)
+================================================================================
+shape: (3312, 10)
+
+dtypes:
+truck_id                  str
+month                     str
+trips_completed         int64
+total_miles             int64
+total_revenue         float64
+average_mpg           float64
+maintenance_events      int64
+maintenance_cost      float64
+downtime_hours        float64
+utilization_rate      float64
+dtype: object
+
+missing values: none
+
+full duplicate rows: 0
+  outliers (extreme IQR*3) in 'maintenance_cost': 2  (range obs: [0.0, 10414.66], bounds: [-7229.37, 9639.16])
+  outliers (extreme IQR*3) in 'downtime_hours': 6  (range obs: [0.0, 152.2], bounds: [-90.60, 120.80])
+
+
+DONE PROFILING
